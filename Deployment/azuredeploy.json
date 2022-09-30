@@ -564,14 +564,21 @@
         "dailyMemoryTimeQuota": 0,
         "httpsOnly": true,
         "siteConfig": {
-          "ftpsState": "Disabled",
           "alwaysOn": "[not(variables('isSharedPlan'))]",
           "cors": {
             "supportCredentials": true,
             "allowedOrigins": [
               "[concat('https://', variables('frontDoorDomain'))]"
             ]
-          }
+          },
+          "ftpsState": "Disabled",
+          "metadata": [
+            {
+              "name": "CURRENT_STACK",
+              "value": "dotnet"
+            }
+          ],
+          "netFrameworkVersion": "v6.0.400"
         }
       },
       "dependsOn": [
